@@ -25,8 +25,30 @@ const addToCart = (book) =>setstate({
   : [...state.cart, {...book, count: 1}]
 })
 
+const removeFromCart =(id) =>setstate({
+  ...state,
+  cart: state.cart.filter(cartItem => cartItem.id !== id)
+  
+})
+
+
+const increase = (id) =>{
+  setstate({
+    ...state,
+    cart: state.cart.map((cartItem) => cartItem.id === id ? {...cartItem, count:cartItem.count + 1 } : cartItem   )
+  })
+}
+
+const decrease = (id) =>{
+  setstate({
+    ...state,
+    cart: state.cart.map((cartItem) => cartItem.id === id ? {...cartItem, count: cartItem.count >1 ?cartItem.count - 1 : 1 } : cartItem   )
+  })
+}
+
+
   return (
-    <BooksContext.Provider value={{state: state, addToCart}}>
+    <BooksContext.Provider value={{state: state, addToCart, increase, decrease, removeFromCart}}>
     <div className="App">
       <h1>
         Shopping Cart
