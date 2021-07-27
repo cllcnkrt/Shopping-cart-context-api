@@ -28,7 +28,6 @@ const addToCart = (book) =>setstate({
 const removeFromCart =(id) =>setstate({
   ...state,
   cart: state.cart.filter(cartItem => cartItem.id !== id)
-  
 })
 
 
@@ -51,12 +50,15 @@ const decrease = (id) =>{
     <BooksContext.Provider value={{state: state, addToCart, increase, decrease, removeFromCart}}>
     <div className="App">
       <h1>
+      <img
+          src="https://avatars3.githubusercontent.com/u/60869810?v=4"
+          alt=""
+        />
         Shopping Cart
         <img
           src="https://avatars3.githubusercontent.com/u/60869810?v=4"
-          alt="React Dersleri"
+          alt=""
         />{" "}
-        React Dersleri
       </h1>
       <Route exact path="/" component={Products} />
       <Route path="/cart" component={Cart} />

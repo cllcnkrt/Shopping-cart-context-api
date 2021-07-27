@@ -5,12 +5,13 @@ import { BooksContext } from "../App";
 const Products = (props) => {
   const context = useContext(BooksContext);
   
-
+  const totalCartCount = context.state.cart
+  .reduce((total, book) => ( total = total + book.count),0)
   return (
     <div>
       <h2>
         <span>Kitap Listesi</span>
-        <Link to="/cart">Sepetim</Link>
+        <Link to="/cart">Sepetim ({totalCartCount})</Link>
       </h2>
       {context.state.bookList.map((book, id) => (
         <div key={book.id} className="book">
