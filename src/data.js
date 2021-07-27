@@ -38,6 +38,6 @@ export const data = [
       price: 25.99,
       image:
         "https://images-na.ssl-images-amazon.com/images/I/414N7XbRE%2BL._SX344_BO1,204,203,200_.jpg"
-    }
+    },
   ];
   
