@@ -4,7 +4,7 @@ import { BooksContext } from "../App";
 
 const Products = (props) => {
   const context = useContext(BooksContext);
-  console.log(context);
+  
 
   return (
     <div>
